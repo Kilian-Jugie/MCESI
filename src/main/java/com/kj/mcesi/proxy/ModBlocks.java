@@ -3,6 +3,7 @@ package com.kj.mcesi.proxy;
 import java.util.ArrayList;
 
 import com.kj.mcesi.block.KBlock;
+import com.kj.mcesi.block.KBlockChest;
 import com.kj.mcesi.block.KBlockTMachine;
 import com.kj.mcesi.block.KBlockTest;
 import com.kj.mcesi.block.IKBlock;
@@ -25,6 +26,7 @@ public class ModBlocks {
 	public static final void initInstances() {
 		addBlock(new KBlockTest());
 		addBlock(new KBlockTMachine());
+		addBlock(new KBlockChest());
 	}
 	
 	//public static CBlock ctestblock;
