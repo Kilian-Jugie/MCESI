@@ -5,3 +5,5 @@ backup2/
 bin/
 build/
 run/
+
+*.launch
