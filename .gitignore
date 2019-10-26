@@ -1,0 +1,7 @@
+backup/
+backup2/
+.gradle/
+.settings/
+bin/
+build/
+run/
