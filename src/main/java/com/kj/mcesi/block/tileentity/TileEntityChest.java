@@ -19,6 +19,11 @@ public class TileEntityChest extends KTileEntity {
 	public int getInventoryRows() {
 		return 8;
 	}
+	
+	@Override
+	public int getInventoryCols() {
+		return 13;
+	}
 
 	@Override
 	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {

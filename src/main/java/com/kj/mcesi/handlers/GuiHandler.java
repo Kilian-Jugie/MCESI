@@ -1,16 +1,11 @@
 package com.kj.mcesi.handlers;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-import com.kj.mcesi.CGuiIds;
 import com.kj.mcesi.MCESI;
-import com.kj.mcesi.block.container.ContainerTMachine;
 import com.kj.mcesi.block.container.KContainer;
-import com.kj.mcesi.block.gui.GuiTMachine;
 import com.kj.mcesi.block.gui.KGui;
 import com.kj.mcesi.block.tileentity.KTileEntity;
-import com.kj.mcesi.block.tileentity.TileEntityTMachine;
 import com.kj.mcesi.util.Pair;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -51,7 +46,7 @@ public class GuiHandler implements IGuiHandler {
 					getConstructor(InventoryPlayer.class, KTileEntity.class, EntityPlayer.class).
 					newInstance(player.inventory, (KTileEntity)world.getTileEntity(new BlockPos(x,y,z)), player);
 		} catch (Exception e) {
-			MCESI.logger.error("Error during getServerGuiElement container instantiation : "+e.getMessage());
+			MCESI.logger.error("Error during getClientGuiElement container instantiation : "+e.getMessage());
 			return null;
 		}
 	}

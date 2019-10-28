@@ -1,6 +1,5 @@
 package com.kj.mcesi.block;
 
-import com.kj.mcesi.CGuiIds;
 import com.kj.mcesi.block.container.ContainerTMachine;
 import com.kj.mcesi.block.gui.GuiTMachine;
 import com.kj.mcesi.block.tileentity.TileEntityTMachine;

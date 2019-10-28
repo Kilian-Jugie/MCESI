@@ -1,6 +1,7 @@
 package com.kj.mcesi.block.container;
 
 
+import com.kj.mcesi.MCESI;
 import com.kj.mcesi.block.tileentity.KTileEntity;
 import com.kj.mcesi.block.tileentity.TileEntityTMachine;
 
@@ -26,30 +27,33 @@ public class KContainer<_T extends KTileEntity> extends Container {
 		m_Cols = machineInv.getInventoryCols();
 		
 		m_TileEntity.openInventory(player);
-		
-		/*for(int i = 0; i<m_Rows; ++i) {
-			for(int j = 0; j<m_Cols; ++j) {
-				this.addSlotToContainer(new Slot((IInventory)m_TileEntity, j+i*9, 8+j*18, 18+i*18));
-			}
-		}*/
 	}
 	
 	protected void addSlot(int x, int y) {
+		//MCESI.logger.info("ADDSLOT TO POSITION: "+x+";"+y+" by "+this);
 		this.addSlotToContainer(new Slot(m_TileEntity, m_SlotIndex++, x, y));
 	}
 	
-	protected void setupPlayerInventory() {
+	protected void setupPlayerInventory(int xMargin, int yMargin) {
 		for(int y = 0; y<3; ++y) {
 			for(int x = 0; x<9; ++x) {
-				this.addSlotToContainer(new Slot(m_PlayerInventory, x+y*9+9, 8+x*STD_MARGIN, 175 + y*STD_MARGIN));
+				this.addSlotToContainer(new Slot(m_PlayerInventory, x+y*9+9, 8+x*STD_MARGIN+xMargin, 175 + y*STD_MARGIN+yMargin));
 			}
 		}
 	}
 	
-	protected void setupPlayerHotbar() {
+	protected void setupPlayerHotbar(int xMargin, int yMargin) {
 		for(int x=0; x<9; ++x) {
-			this.addSlotToContainer(new Slot(m_PlayerInventory, x, 8+x*STD_MARGIN, 233));
+			this.addSlotToContainer(new Slot(m_PlayerInventory, x, 8+x*STD_MARGIN+xMargin, 233+yMargin));
 		}
+	}
+	
+	protected void setupPlayerInventory() {
+		setupPlayerInventory(0,0);
+	}
+	
+	protected void setupPlayerHotbar() {
+		setupPlayerHotbar(0,0);
 	}
 	
 	@Override
