@@ -6,4 +6,5 @@ public interface IKTileEntity {
 	public int getInventoryRows();
 	public int getInventoryCols();
 	public void openInventory(EntityPlayer player);
+	public void fixedUpdate();
 }

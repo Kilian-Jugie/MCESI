@@ -17,7 +17,7 @@ public abstract class KTileEntity extends TileEntityLockableLoot implements ITic
 	public int numPlayersUsing;
 	private final String m_Name;
 	
-	KTileEntity(String name) {
+	public KTileEntity(String name) {
 		m_Name = name;
 	}
 	
@@ -87,5 +87,15 @@ public abstract class KTileEntity extends TileEntityLockableLoot implements ITic
 	@Override
 	public int getInventoryCols() {
 		return 9;
+	}
+	
+	@Override
+	public int getInventoryRows() {
+		return 0;
+	}
+	
+	@Override
+	public void fixedUpdate() {
+		//NOOP
 	}
 }

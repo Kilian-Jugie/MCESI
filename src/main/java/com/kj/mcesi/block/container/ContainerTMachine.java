@@ -17,8 +17,8 @@ public class ContainerTMachine extends KContainer<KTileEntity> {
 		super(playerInv, machineInv, player);
 		super.setupPlayerHotbar();
 		super.setupPlayerInventory();
-		for(int i = 0; i<machineInv.getInventoryRows(); ++i) {
-			for(int j = 0; j<machineInv.getInventoryCols(); ++j) {
+		for(int i = 0; i<machineInv.getInventoryRows(); i++) {
+			for(int j = 0; j<machineInv.getInventoryCols(); j++) {
 				this.addSlot(8+j*STD_MARGIN, 18+i*STD_MARGIN);
 			}
 		}

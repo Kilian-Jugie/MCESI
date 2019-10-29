@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.kj.mcesi.block.KBlock;
 import com.kj.mcesi.block.KBlockChest;
+import com.kj.mcesi.block.KBlockFurnace;
 import com.kj.mcesi.block.KBlockTMachine;
 import com.kj.mcesi.block.KBlockTest;
 import com.kj.mcesi.block.IKBlock;
@@ -27,6 +28,7 @@ public class ModBlocks {
 		addBlock(new KBlockTest());
 		addBlock(new KBlockTMachine());
 		addBlock(new KBlockChest());
+		addBlock(new KBlockFurnace());
 	}
 	
 	//public static CBlock ctestblock;

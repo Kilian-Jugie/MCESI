@@ -50,12 +50,15 @@ public class KGui extends GuiContainer {
 	}
 	
 	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.renderHoveredToolTip(mouseX, mouseY);
+    }
+	
+	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		this.fontRenderer.drawString(this.m_TileEntity.getDisplayName().getUnformattedText(), m_TEContLabelX, m_TEContLabelY, m_TEContColor);
 		this.fontRenderer.drawString(this.m_PlayerInventory.getDisplayName().getFormattedText(), m_PInvLabelX, m_PInvLabelY, m_PInvColor);
-		
-		//TODO: Changer cette bouse pour ça colle (et pendre le mec qui a pondu ça aussi)
-		this.renderHoveredToolTip(mouseX-110, mouseY+10);
 	}
 	
 	@Override
