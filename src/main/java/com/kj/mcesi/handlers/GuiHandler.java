@@ -14,6 +14,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
+/*
+ * @brief Redirect to the correct GUI from an id
+ */
 public class GuiHandler implements IGuiHandler {
 	private ArrayList<Pair<Class<? extends KGui>, Class<? extends KContainer>>> m_Guis = new ArrayList<>();
 	
@@ -24,9 +27,6 @@ public class GuiHandler implements IGuiHandler {
 	
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		/*if(ID == CGuiIds.GUI_TMACHINE_ID)  {
-			return new ContainerTMachine(player.inventory, (TileEntityTMachine)world.getTileEntity(new BlockPos(x,y,z)), player);
-		}*/
 		try {
 			return m_Guis.get(ID).second.
 					getConstructor(InventoryPlayer.class, KTileEntity.class, EntityPlayer.class).
@@ -39,8 +39,6 @@ public class GuiHandler implements IGuiHandler {
 	
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		//if(ID == CGuiIds.GUI_TMACHINE_ID) 
-		//	return new GuiTMachine(player.inventory, (TileEntityTMachine)world.getTileEntity(new BlockPos(x,y,z)), player);
 		try {
 			return m_Guis.get(ID).first.
 					getConstructor(InventoryPlayer.class, KTileEntity.class, EntityPlayer.class).

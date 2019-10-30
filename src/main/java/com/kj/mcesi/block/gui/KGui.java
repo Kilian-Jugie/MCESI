@@ -10,14 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class KGui extends GuiContainer {
-	/*public KGui(InventoryPlayer playerInventory, TileEntity machineInventory,
-			EntityPlayer player, Class<? extends KContainer<? extends TileEntity>> containerClass, int sizeX, int sizeY) 
-					throws InstantiationException, IllegalAccessException, IllegalArgumentException,
-					InvocationTargetException, NoSuchMethodException, SecurityException {
-		super(containerClass.getDeclaredConstructor(InventoryPlayer.class, TileEntity.class, EntityPlayer.class)
-				.newInstance(playerInventory, machineInventory, player));
-	}*/
-	private final ResourceLocation GUI_PATH;
+	private final ResourceLocation m_GuiPath;
 	private final InventoryPlayer m_PlayerInventory;
 	private final TileEntity m_TileEntity;
 	private int m_TEContLabelX = 8, m_TEContLabelY = 6;
@@ -28,22 +21,37 @@ public class KGui extends GuiContainer {
 		super(c);
 		this.xSize = sizeX;
 		this.ySize = sizeY;
-		GUI_PATH = new ResourceLocation(MCESI.MODID, "textures/gui/"+imgName);
+		m_GuiPath = new ResourceLocation(MCESI.MODID, "textures/gui/"+imgName);
 		m_PlayerInventory = playerInv;
 		m_TileEntity = te;
 		m_PInvLabelY = this.ySize-92;
 	}
 	
+	/*
+	 * @brief Set the position for the container name
+	 * @param x x position
+	 * @param y y position
+	 */
 	public void setContainerLabelPos(int x, int y) {
 		m_TEContLabelX = x;
 		m_TEContLabelY = y;
 	}
 	
+	/*
+	 * @brief Set the position for the inventory name ("inventory")
+	 * @param x x position
+	 * @param y y position
+	 */
 	public void setInventoryLabelPos(int x, int y) {
 		m_PInvLabelX = x;
 		m_PInvLabelY = y;
 	}
 	
+	/*
+	 * @brief Set the colors for the container name and the inventory name
+	 * @param containerColor Color of the container name
+	 * @param invColor Color of the inventory name
+	 */
 	public void setLabelsColors(int containerColor, int invColor) {
 		m_TEContColor = containerColor;
 		m_PInvColor = invColor;
@@ -64,7 +72,7 @@ public class KGui extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.clearColor(1.f, 1.f, 1.f, 1.f);
-		this.mc.getTextureManager().bindTexture(GUI_PATH);
+		this.mc.getTextureManager().bindTexture(m_GuiPath);
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 	}
 }

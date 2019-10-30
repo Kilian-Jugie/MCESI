@@ -8,7 +8,7 @@ import net.minecraft.inventory.Container;
 
 public class TileEntityFurnace extends KTileEntityMachine {
 	public TileEntityFurnace() {
-		super("tchest");
+		super("tfurnace");
 	}
 
 	@Override

@@ -29,11 +29,22 @@ public class KContainer<_T extends KTileEntity> extends Container {
 		m_TileEntity.openInventory(player);
 	}
 	
+	/*
+	 * @brief add a slot at a given position
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * 
+	 * This function avoid the managment of ids
+	 */
 	protected void addSlot(int x, int y) {
-		//MCESI.logger.info("ADDSLOT TO POSITION: "+x+";"+y+" by "+this);
 		this.addSlotToContainer(new Slot(m_TileEntity, m_SlotIndex++, x, y));
 	}
 	
+	/* TODO: Uniformization
+	 * @brief Setup the default player inventory
+	 * @param xMargin Margin in pixels on the X axis
+	 * @param yMargin Margin in pixels on the Y axis
+	 */
 	protected void setupPlayerInventory(int xMargin, int yMargin) {
 		for(int y = 0; y<3; ++y) {
 			for(int x = 0; x<9; ++x) {
@@ -42,16 +53,23 @@ public class KContainer<_T extends KTileEntity> extends Container {
 		}
 	}
 	
+	/* TODO: Uniformization
+	 * @brief Setup the default player hotbar
+	 * @param xMargin Margin in pixels on the X axis
+	 * @param yMargin Margin in pixels on the Y axis
+	 */
 	protected void setupPlayerHotbar(int xMargin, int yMargin) {
 		for(int x=0; x<9; ++x) {
 			this.addSlotToContainer(new Slot(m_PlayerInventory, x, 8+x*STD_MARGIN+xMargin, 233+yMargin));
 		}
 	}
 	
+	//TODO: deprecation
 	protected void setupPlayerInventory() {
 		setupPlayerInventory(0,0);
 	}
 	
+	//TODO: deprecation
 	protected void setupPlayerHotbar() {
 		setupPlayerHotbar(0,0);
 	}
