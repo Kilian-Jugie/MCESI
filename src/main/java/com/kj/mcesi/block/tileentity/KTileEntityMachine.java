@@ -1,8 +1,7 @@
 package com.kj.mcesi.block.tileentity;
 
 public abstract class KTileEntityMachine extends KTileEntity {
-	//Real value: +1 (operator optimization ?)
-	//Default: 9 each 0.5s refresh
+	//Default: 9 -> each 10 ticks refresh
 	private static final int FIXED_UPDATE_TCOUNT = 9;
 	private int m_Ticks = 0;
 	
