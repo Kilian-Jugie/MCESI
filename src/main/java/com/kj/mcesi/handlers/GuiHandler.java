@@ -21,6 +21,7 @@ public class GuiHandler implements IGuiHandler {
 	private ArrayList<Pair<Class<? extends KGui>, Class<? extends KContainer>>> m_Guis = new ArrayList<>();
 	
 	public int registerGui(Class<? extends KGui> guiClass, Class<? extends KContainer<? extends KTileEntity>> containerClass ) {
+		MCESI.logger.info("Registering gui of gui:"+guiClass+" container:"+containerClass);
 		m_Guis.add(new Pair<>(guiClass, containerClass));
 		return m_Guis.size()-1;
 	}
@@ -31,7 +32,7 @@ public class GuiHandler implements IGuiHandler {
 			return m_Guis.get(ID).second.
 					getConstructor(InventoryPlayer.class, KTileEntity.class, EntityPlayer.class).
 					newInstance(player.inventory, (KTileEntity)world.getTileEntity(new BlockPos(x,y,z)), player);
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			MCESI.logger.error("Error during getServerGuiElement container instantiation : "+e.getMessage());
 			return null;
 		}
@@ -43,7 +44,7 @@ public class GuiHandler implements IGuiHandler {
 			return m_Guis.get(ID).first.
 					getConstructor(InventoryPlayer.class, KTileEntity.class, EntityPlayer.class).
 					newInstance(player.inventory, (KTileEntity)world.getTileEntity(new BlockPos(x,y,z)), player);
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			MCESI.logger.error("Error during getClientGuiElement container instantiation : "+e.getMessage());
 			return null;
 		}

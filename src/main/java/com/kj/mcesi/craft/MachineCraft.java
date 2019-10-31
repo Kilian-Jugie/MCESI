@@ -18,8 +18,8 @@ public class MachineCraft {
 	public MachineCraft(ItemStack i, ItemStack o) {
 		m_Inputs = new ArrayList<ItemStack>(1);
 		m_Outputs = new ArrayList<ItemStack>(1);
-		m_Inputs.set(0, i);
-		m_Outputs.set(0, o);
+		m_Inputs.add(i);
+		m_Outputs.add(o);
 	}
 	
 	public void setStrict(boolean b) {

@@ -7,11 +7,14 @@ import com.kj.mcesi.craft.MachineCraftRegistry;
 import com.kj.mcesi.proxy.ModBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.crash.CrashReport;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ReportedException;
 
 /*
  * TODO IMPORTANT:

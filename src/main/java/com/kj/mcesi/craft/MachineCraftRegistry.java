@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.item.ItemStack;
 
 public class MachineCraftRegistry {
-	private ArrayList<MachineCraft> m_Crafts;
+	private ArrayList<MachineCraft> m_Crafts = new ArrayList<>();
 	
 	
 	public MachineCraftRegistry() {}
