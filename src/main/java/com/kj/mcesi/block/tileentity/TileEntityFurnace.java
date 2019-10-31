@@ -25,6 +25,7 @@ import net.minecraft.util.ReportedException;
 
 public class TileEntityFurnace extends KTileEntityMachine {
 	private int m_ProcessTicks = 0;
+	private int m_BaseProcessTicks = 0;
 	private boolean m_IsInProcess = false;
 
 	private static final int SLOT_INPUT = 0;
@@ -55,40 +56,31 @@ public class TileEntityFurnace extends KTileEntityMachine {
 		if(!this.world.isRemote) {
 			if(m_IsInProcess) {
 				if(m_ProcessTicks < 0) {
-					MCESI.logger.info("PROCESS ENDED !");
 					m_ProcessTicks = 0;
 					m_IsInProcess = false;
 
-					//getItems().set(SLOT_OUTPUT, new ItemStack((Block)ModBlocks.getBlocks().get(0)));
 					if(getItems().get(SLOT_OUTPUT).isEmpty()) {
 						getItems().set(SLOT_OUTPUT, m_CurrentCraft.getOutputs().get(0));
 					}
 					else {
 						getItems().get(SLOT_OUTPUT).setCount(getItems().get(SLOT_OUTPUT).getCount()+1);
 					}
+					
+					markDirty();
 				}
 				else {
-					MCESI.logger.info("PROCESSING State: "+m_ProcessTicks);
+					MCESI.logger.info("PROCESSING State: "+(m_BaseProcessTicks-m_ProcessTicks)+"/"+m_BaseProcessTicks);
 					m_ProcessTicks--;
 				}
 			}
 			else if(!getItems().get(SLOT_INPUT).isEmpty()) {
 				m_CurrentCraft = craftRegistry.getCraftForInput(getItems().get(SLOT_INPUT));
 				if(m_CurrentCraft != null&&canStartProcess(m_CurrentCraft.getOutputs().get(0))) {
-					m_ProcessTicks = m_CurrentCraft.getProcessTime();
+					m_BaseProcessTicks = m_ProcessTicks = m_CurrentCraft.getProcessTime();
 					m_IsInProcess = true;
 					getItems().get(SLOT_INPUT).shrink(1);
 				}
 
-				/*if(ItemStack.areItemsEqual(getItems().get(0), new ItemStack((Block)ModBlocks.getBlocks().get(0)))) {
-				MCESI.logger.info("EQUALS !");
-				m_ProcessTicks = 20;
-				m_IsInProcess = true;
-				getItems().get(SLOT_INPUT).shrink(1);
-				//getItems().set(SLOT_INPUT, );
-				//getItems().set(SLOT_INPUT, ItemStack.EMPTY);
-
-			}*/
 			}
 		}
 

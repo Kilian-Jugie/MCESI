@@ -2,6 +2,7 @@ package com.kj.mcesi.block.container;
 
 
 import com.kj.mcesi.MCESI;
+import com.kj.mcesi.block.container.slot.KSlot;
 import com.kj.mcesi.block.tileentity.KTileEntity;
 import com.kj.mcesi.block.tileentity.TileEntityTMachine;
 
@@ -34,10 +35,26 @@ public class KContainer<_T extends KTileEntity> extends Container {
 	 * @param x X coordinate
 	 * @param y Y coordinate
 	 * 
-	 * This function avoid the managment of ids
+	 * This function avoid the managment of indexes
 	 */
 	protected void addSlot(int x, int y) {
 		this.addSlotToContainer(new Slot(m_TileEntity, m_SlotIndex++, x, y));
+	}
+	
+	/*
+	 * @brief get a new index to be used by a custom slot
+	 * This function increment automaticaly the index
+	 */
+	protected int getNewIndex() {
+		return m_SlotIndex++;
+	}
+	
+	/*
+	 * @brief add a fully custom slot
+	 * @param slot Slot to add
+	 */
+	protected void addSlot(KSlot s) {
+		this.addSlotToContainer(s);
 	}
 	
 	/* TODO: Uniformization
