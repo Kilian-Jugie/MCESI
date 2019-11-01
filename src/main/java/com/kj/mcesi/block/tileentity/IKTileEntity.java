@@ -1,6 +1,7 @@
 package com.kj.mcesi.block.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 
 public interface IKTileEntity {
 	/*
@@ -22,4 +23,6 @@ public interface IKTileEntity {
 	 * them progress in process
 	 */
 	public void fixedUpdate();
+	
+	public void onSlotChanged(int index);
 }

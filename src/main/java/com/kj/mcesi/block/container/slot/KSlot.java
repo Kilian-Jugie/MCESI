@@ -9,10 +9,7 @@ public class KSlot extends Slot implements IKSlot {
 		super(inventoryIn, index, xPosition, yPosition);
 	}
 	
-	public void onSlotChange(ItemStack newStack, ItemStack oldStack) {
-       
-    }
-	
+	@Override
 	public boolean isItemValid(ItemStack stack) {
 		return true;
 	}

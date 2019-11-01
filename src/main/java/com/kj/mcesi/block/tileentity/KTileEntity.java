@@ -99,4 +99,9 @@ public abstract class KTileEntity extends TileEntityLockableLoot implements ITic
 	public void fixedUpdate() {
 		//NOOP
 	}
+	
+	@Override
+	public void onSlotChanged(int index) {
+		
+	}
 }

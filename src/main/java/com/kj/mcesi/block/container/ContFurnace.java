@@ -1,5 +1,6 @@
 package com.kj.mcesi.block.container;
 
+import com.kj.mcesi.block.container.slot.KEventSlot;
 import com.kj.mcesi.block.container.slot.KOutputSlot;
 import com.kj.mcesi.block.tileentity.KTileEntity;
 
@@ -16,7 +17,8 @@ public class ContFurnace extends KContainer<KTileEntity> {
 				addSlot(12+(j*STD_MARGIN), 18+i*STD_MARGIN);
 			}
 		}*/
-		addSlot(56,17);
+		//addSlot(56,17);
+		addSlot(new KEventSlot(machineInv, m_TileEntity, getNewIndex(), 56, 17));
 		addSlot(56,53);
 		//addSlot(116,35);
 		addSlot(new KOutputSlot(m_TileEntity, getNewIndex(), 116, 35));
