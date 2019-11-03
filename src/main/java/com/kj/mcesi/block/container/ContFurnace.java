@@ -22,5 +22,6 @@ public class ContFurnace extends KContainer<KTileEntity> {
 		addSlot(56,53);
 		//addSlot(116,35);
 		addSlot(new KOutputSlot(m_TileEntity, getNewIndex(), 116, 35));
+		
 	}
 }

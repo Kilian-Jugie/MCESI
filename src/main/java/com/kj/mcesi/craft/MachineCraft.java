@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import net.minecraft.item.ItemStack;
 
+/*
+ * TODO: make possible recipe with n ingredients quantity
+ */
+
 public class MachineCraft {
 	private ArrayList<ItemStack> m_Inputs;
 	private ArrayList<ItemStack> m_Outputs;
