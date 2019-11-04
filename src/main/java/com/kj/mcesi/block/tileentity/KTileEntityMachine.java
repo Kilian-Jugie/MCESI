@@ -58,8 +58,10 @@ public abstract class KTileEntityMachine extends KTileEntity {
 	
 	protected boolean canStartProcess(ArrayList<ItemStack> outputs) {
 		return Util.forAllIndexAND(getOutputsContent(),
-				(item,index) -> { return item.isEmpty() || (
-						index < outputs.size() && //if craft has less output than outputs slots (where to handle this ?)
+				(item,index) -> { 
+					if(index < outputs.size()) //if craft has less output than outputs slots we don't care
+						return true;
+					return item.isEmpty() || (
 						ItemStack.areItemsEqual(item, outputs.get(index)) &&
 						item.getCount()+outputs.get(index).getCount() < getInventoryStackLimit() ); 
 				});
