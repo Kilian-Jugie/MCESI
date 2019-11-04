@@ -22,8 +22,11 @@ public class TileEntityFurnace extends KTileEntityMachine {
 
 	public TileEntityFurnace() {
 		super("tfurnace");
-		addCraft(new MachineCraft(new ItemStack((Block)ModBlocks.getBlocks().get(0)),
-				new ItemStack((Block)ModBlocks.getBlocks().get(0))));
+		ItemStack input = new ItemStack((Block)ModBlocks.getBlocks().get(0));
+		ItemStack output = new ItemStack((Block)ModBlocks.getBlocks().get(0));
+		input.setCount(3);
+		output.setCount(2);
+		addCraft(new MachineCraft(input,output));
 		addInput(SLOT_INPUT);
 		addOutput(SLOT_OUTPUT);
 	}

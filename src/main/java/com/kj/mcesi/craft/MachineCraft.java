@@ -2,11 +2,9 @@ package com.kj.mcesi.craft;
 
 import java.util.ArrayList;
 
-import net.minecraft.item.ItemStack;
+import com.kj.mcesi.MCESI;
 
-/*
- * TODO: make possible recipe with n ingredients quantity
- */
+import net.minecraft.item.ItemStack;
 
 public class MachineCraft {
 	private ArrayList<ItemStack> m_Inputs;
@@ -34,6 +32,14 @@ public class MachineCraft {
 		return m_Strict;
 	}
 	
+	public void setInputCount(int id, int count) {
+		m_Inputs.get(id).setCount(count);
+	}
+	
+	public void setOutputCount(int id, int count) {
+		m_Outputs.get(id).setCount(count);
+	}
+	
 	public ArrayList<ItemStack> getInputs() {
 		return m_Inputs;
 	}
@@ -49,4 +55,11 @@ public class MachineCraft {
 	public void setProcessTime(int processTime) {
 		m_ProcessTime = processTime;
 	}
+	
+	//It seems that count is initialized to 1 so we don't need this
+	/*
+	private void checkCount(ItemStack i) {
+		if(i.getCount() == 0)
+			i.setCount(1);
+	}*/
 }

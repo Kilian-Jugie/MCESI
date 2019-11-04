@@ -14,19 +14,29 @@ public class MachineCraftRegistry {
 		m_Crafts.add(c);
 	}
 	
+	/*
+	 * Only used for faster computation than with inputs
+	 */
 	public MachineCraft getCraftForInput(ItemStack input) {
+		ItemStack cInp;
 		for(MachineCraft c : m_Crafts) {
-			if(c.getInputs().get(0).isItemEqual(input)) 
+			cInp = c.getInputs().get(0);
+			if(cInp.isItemEqual(input) &&
+					cInp.getCount() == input.getCount()) 
 				return c;
 		}
 		return null;
 	}
 	
 	public MachineCraft getCraftForInputs(ArrayList<ItemStack> inputs) {
+		ItemStack cInp, inp;
 		for(MachineCraft c : m_Crafts) {
 			if(c.getInputs().size()==inputs.size()) {
 				for(int i = 0; i<inputs.size(); i++) {
-					if(c.getInputs().get(i).isItemEqual(inputs.get(i)))
+					cInp = c.getInputs().get(i);
+					inp = inputs.get(i);
+					if(cInp.isItemEqual(inp) &&
+							cInp.getCount() == inp.getCount())
 						return c;
 				}
 			}

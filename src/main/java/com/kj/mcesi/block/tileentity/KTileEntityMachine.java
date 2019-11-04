@@ -59,8 +59,9 @@ public abstract class KTileEntityMachine extends KTileEntity {
 	protected boolean canStartProcess(ArrayList<ItemStack> outputs) {
 		return Util.forAllIndexAND(getOutputsContent(),
 				(item,index) -> { return item.isEmpty() || (
+						index < outputs.size() && //if craft has less output than outputs slots (where to handle this ?)
 						ItemStack.areItemsEqual(item, outputs.get(index)) &&
-						item.getCount() < getInventoryStackLimit() ); 
+						item.getCount()+outputs.get(index).getCount() < getInventoryStackLimit() ); 
 				});
 		
 		
@@ -83,7 +84,13 @@ public abstract class KTileEntityMachine extends KTileEntity {
 			if(m_CurrentCraft != null&&canStartProcess(m_CurrentCraft.getOutputs())) {
 				m_BaseProcessTicks = m_ProcessTicks = m_CurrentCraft.getProcessTime();
 				m_IsInProcess = true;
-				getInputsContent().forEach((item) -> item.shrink(1));
+				
+				Util.forEachIndex(getInputsContent(), (item, index) -> {
+					if(index < m_CurrentCraft.getInputs().size())
+						item.shrink(m_CurrentCraft.getInputs().get(index).getCount());
+				});
+				
+				//getInputsContent().forEach((item) -> item.shrink(1));
 				//getItems().get(SLOT_INPUT).shrink(1);
 			}
 		}
