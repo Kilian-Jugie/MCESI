@@ -26,7 +26,7 @@ public class TileEntityFurnace extends KTileEntityMachine {
 
 	public TileEntityFurnace() {
 		super("tfurnace");
-		ItemStack input = new ItemStack((Block)ModBlocks.getBlocks().get(0));
+		/*ItemStack input = new ItemStack((Block)ModBlocks.getBlocks().get(0));
 		ItemStack fuel = new ItemStack(Items.COAL);
 		ItemStack output = new ItemStack((Block)ModBlocks.getBlocks().get(0));
 		input.setCount(3);
@@ -41,10 +41,21 @@ public class TileEntityFurnace extends KTileEntityMachine {
 		
 		outputs.add(output);
 		
-		addCraft(new MachineCraft(inputs,outputs));
+		addCraft(new MachineCraft(inputs,outputs));*/
+		
 		addInput(SLOT_INPUT);
 		addInput(SLOT_FUEL);
 		addOutput(SLOT_OUTPUT);
+		
+		addCraft(new MachineCraft(2,1))
+			.addInput(new ItemStack((Block)ModBlocks.getBlocks().get(0)))
+			.setLastInputCount(3)
+			.addInput(new ItemStack(Items.COAL))
+			.setLastInputCount(5)
+			.addOutput(new ItemStack((Block)ModBlocks.getBlocks().get(0)))
+			.setLastOutputCount(2);
+		
+		
 	}
 	
 	/*@Override

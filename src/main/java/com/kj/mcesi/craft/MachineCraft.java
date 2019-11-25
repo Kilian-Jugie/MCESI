@@ -24,6 +24,21 @@ public class MachineCraft {
 		m_Outputs.add(o);
 	}
 	
+	public MachineCraft(int inputSize, int outputSize) {
+		m_Inputs = new ArrayList<ItemStack>(inputSize);
+		m_Outputs = new ArrayList<ItemStack>(outputSize);
+	}
+	
+	public MachineCraft addInput(ItemStack in) {
+		m_Inputs.add(in);
+		return this;
+	}
+	
+	public MachineCraft addOutput(ItemStack in) {
+		m_Outputs.add(in);
+		return this;
+	}
+	
 	public void setStrict(boolean b) {
 		m_Strict = b;
 	}
@@ -32,13 +47,25 @@ public class MachineCraft {
 		return m_Strict;
 	}
 	
+	public MachineCraft setLastInputCount(int count) {
+		m_Inputs.get(m_Inputs.size()-1).setCount(count);
+		return this;
+	}
+	
+	public MachineCraft setLastOutputCount(int count) {
+		m_Outputs.get(m_Outputs.size()-1).setCount(count);
+		return this;
+	}
+	
+	//Id might never be implemented
+	/*
 	public void setInputCount(int id, int count) {
 		m_Inputs.get(id).setCount(count);
 	}
 	
 	public void setOutputCount(int id, int count) {
 		m_Outputs.get(id).setCount(count);
-	}
+	}*/
 	
 	public ArrayList<ItemStack> getInputs() {
 		return m_Inputs;

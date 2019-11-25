@@ -44,8 +44,8 @@ public abstract class KTileEntityMachine extends KTileEntity {
 		m_Outputs.add(out);
 	}
 	
-	protected void addCraft(MachineCraft craft) {
-		m_CraftRegistry.addCraft(craft);
+	protected MachineCraft addCraft(MachineCraft craft) {
+		return m_CraftRegistry.addCraft(craft);
 	}
 	
 	protected ArrayList<ItemStack> getInputsContent() {

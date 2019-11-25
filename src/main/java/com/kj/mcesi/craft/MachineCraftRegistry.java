@@ -19,9 +19,9 @@ public class MachineCraftRegistry {
 	
 	public MachineCraftRegistry() {}
 	
-	public int addCraft(MachineCraft c) {
+	public MachineCraft addCraft(MachineCraft c) {
 		m_Crafts.add(c);
-		return m_Crafts.size()-1;
+		return m_Crafts.get(m_Crafts.size()-1);
 	}
 	
 	/*
