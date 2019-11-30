@@ -1,5 +1,6 @@
 package com.kj.mcesi.block;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -10,5 +11,7 @@ public interface IKBlock {
 	 * from this block with a custom location
 	 */
 	void initModel();
+	
+	IBlockState getDefaultState();
 
 }

@@ -2,13 +2,13 @@ package com.kj.mcesi.block.container;
 
 import com.kj.mcesi.block.container.slot.KEventSlot;
 import com.kj.mcesi.block.container.slot.KOutputSlot;
-import com.kj.mcesi.block.tileentity.KTileEntity;
+import com.kj.mcesi.block.tileentity.KInventoryTileEntity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 
-public class ContFurnace extends KContainer<KTileEntity> {
-	public ContFurnace(InventoryPlayer playerInv, KTileEntity machineInv, EntityPlayer player) {
+public class ContFurnace extends KContainer<KInventoryTileEntity> {
+	public ContFurnace(InventoryPlayer playerInv, KInventoryTileEntity machineInv, EntityPlayer player) {
 		super(playerInv, machineInv, player);
 		super.setupPlayerHotbar(0,-91);
 		super.setupPlayerInventory(0,-91);

@@ -1,6 +1,6 @@
 package com.kj.mcesi.block.container;
 
-import com.kj.mcesi.block.tileentity.KTileEntity;
+import com.kj.mcesi.block.tileentity.KInventoryTileEntity;
 import com.kj.mcesi.block.tileentity.TileEntityTMachine;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,11 +9,11 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class ContainerTMachine extends KContainer<KTileEntity> {
+public class ContainerTMachine extends KContainer<KInventoryTileEntity> {
 	//private final int numRows;
 	//private final TileEntityTMachine machineInventory;
 	
-	public ContainerTMachine(InventoryPlayer playerInv, KTileEntity machineInv, EntityPlayer player) {
+	public ContainerTMachine(InventoryPlayer playerInv, KInventoryTileEntity machineInv, EntityPlayer player) {
 		super(playerInv, machineInv, player);
 		super.setupPlayerHotbar();
 		super.setupPlayerInventory();

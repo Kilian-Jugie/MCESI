@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 
-public class TileEntityTMachine extends KTileEntity /* extends TileEntityLockableLoot implements ITickable, IKTileEntity*/ {
+public class TileEntityTMachine extends KInventoryTileEntity /* extends TileEntityLockableLoot implements ITickable, IKTileEntity*/ {
 
 	public TileEntityTMachine() {
 		super("tmachine");

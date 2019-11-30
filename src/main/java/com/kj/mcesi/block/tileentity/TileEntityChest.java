@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 
-public class TileEntityChest extends KTileEntity {
+public class TileEntityChest extends KInventoryTileEntity {
 	public TileEntityChest() {
 		super("tchest");
 	}

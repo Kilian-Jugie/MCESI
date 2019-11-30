@@ -9,7 +9,7 @@ import com.kj.mcesi.util.Util;
 
 import net.minecraft.item.ItemStack;
 
-public abstract class KTileEntityMachine extends KTileEntity {
+public abstract class KTileEntityMachine extends KInventoryTileEntity {
 	//Default: 9 -> each 10 ticks refresh
 	private static final int FIXED_UPDATE_TCOUNT = 9;
 	private int m_Ticks = 0;

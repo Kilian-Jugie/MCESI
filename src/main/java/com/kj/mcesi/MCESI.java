@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import com.kj.mcesi.proxy.CommonProxy;
 import com.kj.mcesi.proxy.ModBlocks;
 import com.kj.mcesi.proxy.ModItems;
+import com.kj.mcesi.proxy.ModWorldGenerators;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -33,6 +34,7 @@ public class MCESI {
         logger = e.getModLog();
         ModBlocks.initInstances();
         ModItems.initInstances();
+        ModWorldGenerators.initInstances();
         //ModTileEntities.initTileEntities();
         proxy.preInit(e);
     }

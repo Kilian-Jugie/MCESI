@@ -12,12 +12,12 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 
-public abstract class KTileEntity extends TileEntityLockableLoot implements ITickable, IKTileEntity {
+public abstract class KInventoryTileEntity extends TileEntityLockableLoot implements ITickable, IKTileEntity {
 	protected NonNullList<ItemStack> content;
 	public int numPlayersUsing;
 	private final String m_Name;
 	
-	public KTileEntity(String name) {
+	public KInventoryTileEntity(String name) {
 		m_Name = name;
 		content = NonNullList.<ItemStack>withSize(getSizeInventory(), ItemStack.EMPTY);
 	}

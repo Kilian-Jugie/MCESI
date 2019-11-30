@@ -37,6 +37,7 @@ public class CommonProxy {
 	
 	public void init(FMLInitializationEvent e) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(MCESI.instance, m_GuiHandler);
+		ModWorldGenerators.register();
 	}
 	
 	public void postInit(FMLPostInitializationEvent e) {

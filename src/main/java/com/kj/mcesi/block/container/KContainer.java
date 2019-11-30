@@ -3,7 +3,7 @@ package com.kj.mcesi.block.container;
 
 import com.kj.mcesi.MCESI;
 import com.kj.mcesi.block.container.slot.KSlot;
-import com.kj.mcesi.block.tileentity.KTileEntity;
+import com.kj.mcesi.block.tileentity.KInventoryTileEntity;
 import com.kj.mcesi.block.tileentity.TileEntityTMachine;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +12,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-public class KContainer<_T extends KTileEntity> extends Container {
+public class KContainer<_T extends KInventoryTileEntity> extends Container {
 	protected final int m_Rows;
 	protected final int m_Cols;
 	protected final _T m_TileEntity;

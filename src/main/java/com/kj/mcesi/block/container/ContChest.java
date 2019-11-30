@@ -1,12 +1,12 @@
 package com.kj.mcesi.block.container;
 
-import com.kj.mcesi.block.tileentity.KTileEntity;
+import com.kj.mcesi.block.tileentity.KInventoryTileEntity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 
-public class ContChest extends KContainer<KTileEntity> {
-	public ContChest(InventoryPlayer playerInv, KTileEntity machineInv, EntityPlayer player) {
+public class ContChest extends KContainer<KInventoryTileEntity> {
+	public ContChest(InventoryPlayer playerInv, KInventoryTileEntity machineInv, EntityPlayer player) {
 		super(playerInv, machineInv, player);
 		super.setupPlayerHotbar(40,0);
 		super.setupPlayerInventory(40,0);
