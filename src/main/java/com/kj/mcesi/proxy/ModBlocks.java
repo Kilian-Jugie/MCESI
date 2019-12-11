@@ -7,6 +7,7 @@ import com.kj.mcesi.block.KBlockChest;
 import com.kj.mcesi.block.KBlockFurnace;
 import com.kj.mcesi.block.KBlockTMachine;
 import com.kj.mcesi.block.KBlockTest;
+import com.kj.mcesi.block.ore.HematiteOre;
 import com.kj.mcesi.block.IKBlock;
 
 import net.minecraft.block.Block;
@@ -46,6 +47,7 @@ public class ModBlocks {
 		addBlock(new KBlockTMachine());
 		addBlock(new KBlockChest());
 		addBlock(new KBlockFurnace());
+		addBlock(new HematiteOre());
 	}
 	
 	//public static CBlock ctestblock;

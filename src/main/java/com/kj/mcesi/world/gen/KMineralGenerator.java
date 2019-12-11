@@ -36,7 +36,6 @@ public class KMineralGenerator implements KSubGenerator, IWorldGenerator {
 				int y = m_MinHeight + random.nextInt(m_HeightDifference);
 				int z = chunkZ * 16 + random.nextInt(16);
 				m_Generator.generate(world, random, new BlockPos(x, y, z));
-				MCESI.logger.info("Generating ores at "+x+" "+y+" "+z);
 			}
 		}
 		

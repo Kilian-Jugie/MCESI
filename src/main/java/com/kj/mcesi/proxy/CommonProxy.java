@@ -6,7 +6,9 @@ import com.kj.mcesi.block.KBlockTest;
 import com.kj.mcesi.block.IKBlock;
 import com.kj.mcesi.handlers.GuiHandler;
 import com.kj.mcesi.handlers.TileEntityHandler;
+import com.kj.mcesi.item.IKItem;
 import com.kj.mcesi.item.KItem;
+import com.kj.mcesi.util.IKRegistrable;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -48,6 +50,7 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		for(IKBlock b : ModBlocks.getBlocks()) {
 			event.getRegistry().register((Block)b);
+			b.onRegister();
 		}
 		TileEntityHandler.registerTileEntity();
     }
@@ -57,9 +60,10 @@ public class CommonProxy {
     	for(IKBlock b : ModBlocks.getBlocks()) {
     		event.getRegistry().register(new ItemBlock((Block) b).setRegistryName(((Block)b).getRegistryName()));
     	}
-    	for(KItem i : ModItems.getItems()) {
-    		ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(i.getRegistryName(), "inventory"));
-    		event.getRegistry().register(i);
+    	for(IKItem i : ModItems.getItems()) {
+    		ModelLoader.setCustomModelResourceLocation((Item)i, 0, new ModelResourceLocation(((Item)i).getRegistryName(), "inventory"));
+    		event.getRegistry().register((Item)i);
+    		i.onRegister();
     	}
     }
 }

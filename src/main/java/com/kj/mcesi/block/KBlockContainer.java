@@ -1,6 +1,9 @@
 package com.kj.mcesi.block;
 
 import com.kj.mcesi.MCESI;
+import com.kj.mcesi.item.tool.KMiningCapability;
+import com.kj.mcesi.util.IKRegistrable;
+import com.kj.mcesi.util.KHardness;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -31,6 +34,7 @@ public abstract class KBlockContainer extends BlockContainer implements IKBlock 
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		m_GuiId = guiId;
+		this.setHardness(KHardness.MACHINE);
 	}
 	
 	@Override
@@ -68,5 +72,15 @@ public abstract class KBlockContainer extends BlockContainer implements IKBlock 
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState state) {
 		return EnumBlockRenderType.MODEL;
+	}
+	
+	@Override
+	public void onRegister() {
+		
+	}
+	
+	@Override
+	public KMiningCapability getMiningCapability() {
+		return KMiningCapability.DEFAULT_PICKAXE;
 	}
 }

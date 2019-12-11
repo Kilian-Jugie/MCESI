@@ -1,10 +1,14 @@
 package com.kj.mcesi.util;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+
+import com.kj.mcesi.block.IKBlock;
+import com.kj.mcesi.proxy.ModBlocks;
 
 public class Util {
 	public static final <E> ArrayList<E> getIndexesOfArray(List<E> array, ArrayList<Integer> indexes) {
@@ -36,6 +40,16 @@ public class Util {
 		for(int i=0; i<array.size(); i++) 
 			action.accept(array.get(i), i);
 	}
+	
+	public static final IKBlock getBlockFromIId(int internalId) {
+		return ModBlocks.getBlocks().get(internalId);
+	}
+	
+	
+	
+	/*public static final int getIIdFromClass(Class c) {
+		return c.getDeclaredField("INSTANCE")
+	}*/
 	
 	/*public static final <R,T> R forEachFunction(ArrayList<T> arr, Function<? super T,R> func) {
 		

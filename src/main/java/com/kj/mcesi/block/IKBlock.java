@@ -1,10 +1,11 @@
 package com.kj.mcesi.block;
 
-import net.minecraft.block.state.IBlockState;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import com.kj.mcesi.item.tool.KMiningCapability;
+import com.kj.mcesi.util.IKRegistrable;
 
-public interface IKBlock {
+import net.minecraft.block.state.IBlockState;
+
+public interface IKBlock extends IKRegistrable {
 
 	/*
 	 * @brief Initialize the model of the itemblock
@@ -13,5 +14,7 @@ public interface IKBlock {
 	void initModel();
 	
 	IBlockState getDefaultState();
+	
+	KMiningCapability getMiningCapability();
 
 }

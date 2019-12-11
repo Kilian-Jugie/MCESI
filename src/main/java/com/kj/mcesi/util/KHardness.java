@@ -1,4 +1,4 @@
-package com.kj.mcesi.block;
+package com.kj.mcesi.util;
 
 public final class KHardness {
 	private KHardness() {}
@@ -16,4 +16,6 @@ public final class KHardness {
 	public static final float SAND = 0.5f;
 	public static final float INSTANT = 0f;
 	public static final float UNBREAKABLE = -1f;
+	
+	public static final float MACHINE = 5f;
 }

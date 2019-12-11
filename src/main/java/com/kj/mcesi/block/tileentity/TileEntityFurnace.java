@@ -3,6 +3,7 @@ package com.kj.mcesi.block.tileentity;
 import java.util.ArrayList;
 
 import com.kj.mcesi.MCESI;
+import com.kj.mcesi.block.KBlockTest;
 import com.kj.mcesi.block.container.ContFurnace;
 import com.kj.mcesi.craft.MachineCraft;
 import com.kj.mcesi.craft.MachineCraftRegistry;
@@ -48,11 +49,11 @@ public class TileEntityFurnace extends KTileEntityMachine {
 		addOutput(SLOT_OUTPUT);
 		
 		addCraft(new MachineCraft(2,1))
-			.addInput(new ItemStack((Block)ModBlocks.getBlocks().get(0)))
+			.addInput(new ItemStack(KBlockTest.INSTANCE))
 			.setLastInputCount(3)
 			.addInput(new ItemStack(Items.COAL))
 			.setLastInputCount(5)
-			.addOutput(new ItemStack((Block)ModBlocks.getBlocks().get(0)))
+			.addOutput(new ItemStack(KBlockTest.INSTANCE))
 			.setLastOutputCount(2);
 		
 		

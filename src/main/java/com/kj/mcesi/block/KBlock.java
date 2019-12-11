@@ -1,6 +1,9 @@
 package com.kj.mcesi.block;
 
 import com.kj.mcesi.MCESI;
+import com.kj.mcesi.item.tool.KMiningCapability;
+import com.kj.mcesi.item.tool.ToolClass;
+import com.kj.mcesi.util.IKRegistrable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -18,10 +21,26 @@ public class KBlock extends Block implements IKBlock {
 		this.setRegistryName(MCESI.MODID, name);
 	}
 	
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
 	}
+
+	@Override
+	public void onRegister() {
+		
+	}
+
+
+	@Override
+	public KMiningCapability getMiningCapability() {
+		return KMiningCapability.DEFAULT_PICKAXE;
+	}
+
+
+
+	
 
 }
