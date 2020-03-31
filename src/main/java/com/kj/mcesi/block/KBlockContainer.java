@@ -1,6 +1,7 @@
 package com.kj.mcesi.block;
 
 import com.kj.mcesi.MCESI;
+import com.kj.mcesi.block.tileentity.IKTileEntity;
 import com.kj.mcesi.item.tool.KMiningCapability;
 import com.kj.mcesi.util.IKRegistrable;
 import com.kj.mcesi.util.KHardness;
@@ -42,6 +43,7 @@ public abstract class KBlockContainer extends BlockContainer implements IKBlock 
 			EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!worldIn.isRemote) {
 			playerIn.openGui(MCESI.instance, m_GuiId, worldIn, pos.getX(), pos.getY(), pos.getZ());
+			return false;
 		}
 		return true;
 	}

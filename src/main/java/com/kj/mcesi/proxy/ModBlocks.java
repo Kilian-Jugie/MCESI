@@ -3,10 +3,11 @@ package com.kj.mcesi.proxy;
 import java.util.ArrayList;
 
 import com.kj.mcesi.block.KBlock;
-import com.kj.mcesi.block.KBlockChest;
-import com.kj.mcesi.block.KBlockFurnace;
-import com.kj.mcesi.block.KBlockTMachine;
-import com.kj.mcesi.block.KBlockTest;
+import com.kj.mcesi.block.blocks.KBlockChest;
+import com.kj.mcesi.block.blocks.KBlockFurnace;
+import com.kj.mcesi.block.blocks.KBlockTMachine;
+import com.kj.mcesi.block.blocks.KBlockTest;
+import com.kj.mcesi.block.blocks.multiblock.KBlockTestController;
 import com.kj.mcesi.block.ore.HematiteOre;
 import com.kj.mcesi.block.IKBlock;
 
@@ -47,6 +48,7 @@ public class ModBlocks {
 		addBlock(new KBlockTMachine());
 		addBlock(new KBlockChest());
 		addBlock(new KBlockFurnace());
+		addBlock(new KBlockTestController());
 		addBlock(new HematiteOre());
 	}
 	

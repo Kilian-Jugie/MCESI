@@ -45,7 +45,9 @@ public class Util {
 		return ModBlocks.getBlocks().get(internalId);
 	}
 	
-	
+	public static final void maximise(int val, int max) {
+		if(val>max) max = val;
+	}
 	
 	/*public static final int getIIdFromClass(Class c) {
 		return c.getDeclaredField("INSTANCE")

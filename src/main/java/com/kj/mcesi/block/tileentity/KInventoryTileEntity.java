@@ -3,14 +3,19 @@ package com.kj.mcesi.block.tileentity;
 
 import com.kj.mcesi.MCESI;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockableLoot;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 public abstract class KInventoryTileEntity extends TileEntityLockableLoot implements ITickable, IKTileEntity {
 	protected NonNullList<ItemStack> content;
@@ -104,4 +109,14 @@ public abstract class KInventoryTileEntity extends TileEntityLockableLoot implem
 	public void onSlotChanged(int index) {
 		
 	}
+	
+	@Override
+	public boolean onActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+			EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+		return false;
+	}
+	
+	@Override
+	public void onHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {}
+
 }

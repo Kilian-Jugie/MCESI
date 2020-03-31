@@ -1,5 +1,7 @@
-package com.kj.mcesi.block;
+package com.kj.mcesi.block.blocks;
 
+import com.kj.mcesi.block.KBlockContainer;
+import com.kj.mcesi.block.KMaterial;
 import com.kj.mcesi.block.container.ContFurnace;
 import com.kj.mcesi.block.gui.GuiFurnace;
 import com.kj.mcesi.block.tileentity.TileEntityFurnace;

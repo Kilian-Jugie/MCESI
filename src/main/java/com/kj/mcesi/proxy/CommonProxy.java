@@ -2,7 +2,7 @@ package com.kj.mcesi.proxy;
 
 import com.kj.mcesi.MCESI;
 import com.kj.mcesi.block.KBlock;
-import com.kj.mcesi.block.KBlockTest;
+import com.kj.mcesi.block.blocks.KBlockTest;
 import com.kj.mcesi.block.IKBlock;
 import com.kj.mcesi.handlers.GuiHandler;
 import com.kj.mcesi.handlers.TileEntityHandler;

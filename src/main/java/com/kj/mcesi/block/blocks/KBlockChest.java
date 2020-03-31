@@ -1,5 +1,7 @@
-package com.kj.mcesi.block;
+package com.kj.mcesi.block.blocks;
 
+import com.kj.mcesi.block.KBlockContainer;
+import com.kj.mcesi.block.KMaterial;
 import com.kj.mcesi.block.container.ContChest;
 import com.kj.mcesi.block.gui.GuiChest;
 import com.kj.mcesi.block.tileentity.TileEntityChest;
@@ -17,7 +19,7 @@ public class KBlockChest extends KBlockContainer {
 	public KBlockChest() {
 		//super(Material.IRON, "cblocktmachine");
 		//this.setHardness(CHardness.METAL_BLOCK);
-		super("cblockchest", Material.IRON, /*CGuiIds.GUI_TMACHINE_ID*/ CommonProxy.getGuiHandler().registerGui(GuiChest.class, ContChest.class) );
+		super("cblockchest", KMaterial.MACHINE, /*CGuiIds.GUI_TMACHINE_ID*/ CommonProxy.getGuiHandler().registerGui(GuiChest.class, ContChest.class) );
 		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		INSTANCE = this;
 	}

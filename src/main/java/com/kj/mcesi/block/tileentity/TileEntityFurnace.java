@@ -3,7 +3,7 @@ package com.kj.mcesi.block.tileentity;
 import java.util.ArrayList;
 
 import com.kj.mcesi.MCESI;
-import com.kj.mcesi.block.KBlockTest;
+import com.kj.mcesi.block.blocks.KBlockTest;
 import com.kj.mcesi.block.container.ContFurnace;
 import com.kj.mcesi.craft.MachineCraft;
 import com.kj.mcesi.craft.MachineCraftRegistry;

@@ -33,7 +33,7 @@ public class KTool extends ItemTool implements IKItem {
 		try {
 			kb = (IKBlock)blockIn.getBlock();
 		}catch(Exception e) {
-			return true; //TODO Minecraft interface
+			return super.canHarvestBlock(blockIn);
 		}
 		if(kb.getMiningCapability().getToolClass() == m_Class &&
 				kb.getMiningCapability().getHarvestLvl() <= m_Material.getHarvestLvl()) {

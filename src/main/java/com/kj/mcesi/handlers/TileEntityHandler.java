@@ -4,6 +4,7 @@ import com.kj.mcesi.MCESI;
 import com.kj.mcesi.block.tileentity.TileEntityChest;
 import com.kj.mcesi.block.tileentity.TileEntityFurnace;
 import com.kj.mcesi.block.tileentity.TileEntityTMachine;
+import com.kj.mcesi.block.tileentity.multiblocks.TileEntityMultiblockTest;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -13,5 +14,6 @@ public class TileEntityHandler {
 		GameRegistry.registerTileEntity(TileEntityTMachine.class, new ResourceLocation(MCESI.MODID,"tmachine"));
 		GameRegistry.registerTileEntity(TileEntityChest.class, new ResourceLocation(MCESI.MODID,"tchest"));
 		GameRegistry.registerTileEntity(TileEntityFurnace.class, new ResourceLocation(MCESI.MODID,"tfurnace"));
+		GameRegistry.registerTileEntity(TileEntityMultiblockTest.class, new ResourceLocation(MCESI.MODID, "tmultiblocktest"));
 	}
 }
