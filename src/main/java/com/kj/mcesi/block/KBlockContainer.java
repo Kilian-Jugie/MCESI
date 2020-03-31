@@ -2,7 +2,9 @@ package com.kj.mcesi.block;
 
 import com.kj.mcesi.MCESI;
 import com.kj.mcesi.block.tileentity.IKTileEntity;
+import com.kj.mcesi.factories.ToolFactory;
 import com.kj.mcesi.item.tool.KMiningCapability;
+import com.kj.mcesi.proxy.ModItems;
 import com.kj.mcesi.util.IKRegistrable;
 import com.kj.mcesi.util.KHardness;
 
@@ -28,6 +30,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class KBlockContainer extends BlockContainer implements IKBlock {
+	private KMiningCapability m_MiningCapability;
 	private final int m_GuiId;
 	
 	public KBlockContainer(String name, Material mat, int guiId) {
@@ -36,6 +39,7 @@ public abstract class KBlockContainer extends BlockContainer implements IKBlock 
 		setRegistryName(name);
 		m_GuiId = guiId;
 		this.setHardness(KHardness.MACHINE);
+		m_MiningCapability = ToolFactory.getMiningCapability(ModItems.NAME_PICKAXE, ModItems.NAME_STEEL);
 	}
 	
 	@Override
@@ -83,6 +87,6 @@ public abstract class KBlockContainer extends BlockContainer implements IKBlock 
 	
 	@Override
 	public KMiningCapability getMiningCapability() {
-		return KMiningCapability.DEFAULT_PICKAXE;
+		return m_MiningCapability;
 	}
 }

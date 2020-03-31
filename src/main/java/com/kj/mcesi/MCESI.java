@@ -32,8 +32,8 @@ public class MCESI {
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
         logger = e.getModLog();
-        ModBlocks.initInstances();
         ModItems.initInstances();
+        ModBlocks.initInstances();
         ModWorldGenerators.initInstances();
         //ModTileEntities.initTileEntities();
         proxy.preInit(e);

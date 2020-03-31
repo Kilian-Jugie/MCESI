@@ -5,6 +5,7 @@ import com.kj.mcesi.util.IKRegistrable;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
 public class KItem extends Item implements IKItem {
 	private String m_Name;
@@ -20,5 +21,10 @@ public class KItem extends Item implements IKItem {
 	@Override
 	public void onRegister() {
 		
+	}
+	
+	@Override
+	public ResourceLocation getLocation() {
+		return this.getRegistryName();
 	}
 }

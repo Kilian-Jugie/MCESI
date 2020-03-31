@@ -1,16 +1,18 @@
 package com.kj.mcesi.item.tool;
 
+import com.kj.mcesi.MCESI;
 import com.kj.mcesi.block.IKBlock;
 import com.kj.mcesi.item.IKItem;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemTool;
+import net.minecraft.util.ResourceLocation;
 
 public class KTool extends ItemTool implements IKItem {
 	protected ToolClass m_Class;
 	protected KToolMaterialClass m_Material;
 	
-	protected KTool(String name, KToolMaterialClass material, ToolClass toolClass) {
+	public KTool(String name, KToolMaterialClass material, ToolClass toolClass) {
 		super(material.getAtkDmgRatio()*toolClass.getBaseAtkDamage(),
 				material.getAtkSpdRatio()*toolClass.getBaseAtkSpeed(),
 				ToolMaterial.DIAMOND, null); //Diamond means nothing other than to avoid nullptrex
@@ -41,6 +43,11 @@ public class KTool extends ItemTool implements IKItem {
 		}
 		
 		return false;
+	}
+	
+	@Override
+	public ResourceLocation getLocation() {
+		return new ResourceLocation(MCESI.MODID, "tools/"+m_Class.getName()+"/"+m_Material.getName()+"/"+getUnlocalizedName().substring(5));
 	}
 	
 	

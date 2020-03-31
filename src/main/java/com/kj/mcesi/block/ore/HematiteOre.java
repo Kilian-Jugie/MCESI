@@ -16,9 +16,4 @@ public class HematiteOre extends KBlockOre {
 	public void onRegister() {
 		this.setupWorldGen(32, 1, 20, 0, 255, 0);
 	}
-	
-	@Override
-	public KMiningCapability getMiningCapability() {
-		return new KMiningCapability(ToolClass.PICKAXE_CLASS, KToolMaterialClass.BASE);
-	}
 }

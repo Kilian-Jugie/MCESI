@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "mcesi:items/tools/pickaxe/steel/pickaxe_steel"
+    }
+}

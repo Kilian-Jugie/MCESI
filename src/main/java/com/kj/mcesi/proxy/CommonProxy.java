@@ -52,18 +52,20 @@ public class CommonProxy {
 			event.getRegistry().register((Block)b);
 			b.onRegister();
 		}
+		
 		TileEntityHandler.registerTileEntity();
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-    	for(IKBlock b : ModBlocks.getBlocks()) {
-    		event.getRegistry().register(new ItemBlock((Block) b).setRegistryName(((Block)b).getRegistryName()));
-    	}
     	for(IKItem i : ModItems.getItems()) {
-    		ModelLoader.setCustomModelResourceLocation((Item)i, 0, new ModelResourceLocation(((Item)i).getRegistryName(), "inventory"));
+    		ModelLoader.setCustomModelResourceLocation((Item)i, 0, new ModelResourceLocation(((IKItem)i).getLocation(), "inventory"));
     		event.getRegistry().register((Item)i);
     		i.onRegister();
     	}
+    	for(IKBlock b : ModBlocks.getBlocks()) {
+    		event.getRegistry().register(new ItemBlock((Block) b).setRegistryName(((Block)b).getRegistryName()));
+    	}
+    	
     }
 }
